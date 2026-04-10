@@ -1,1 +1,1 @@
-mdamirali.com
+mdamirali.github.io

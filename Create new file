@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমার প্রথম ওয়েবসাইট</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1117;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #58a6ff;
+        }
+        p {
+            font-size: 1.3em;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>স্বাগতম!</h1>
+    <p>এটা আমার প্রথম GitHub Pages ওয়েবসাইট</p>
+    <p>mdamirali172009.github.io</p>
+</body>
+</html>

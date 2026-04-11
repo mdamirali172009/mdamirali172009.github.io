@@ -1,119 +1,190 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mr. Amir Ali</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .sphere { animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
-        .card-hover:hover { transform: translateY(-8px); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff7e00,#ff3d00);
+}
+
+/* MAIN CARD */
+.container{
+width:900px;
+height:520px;
+background:#fff;
+border-radius:30px;
+display:flex;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* LEFT SIDE */
+.left{
+width:45%;
+background:linear-gradient(135deg,#ff7e00,#ff3d00);
+color:#fff;
+padding:40px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.left h1{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.left p{
+font-size:14px;
+opacity:.8;
+}
+
+/* RIGHT SIDE */
+.right{
+width:55%;
+padding:40px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+/* TAB */
+.tabs{
+display:flex;
+justify-content:space-between;
+margin-bottom:30px;
+font-weight:500;
+}
+
+.tabs span{
+cursor:pointer;
+position:relative;
+}
+
+.tabs span.active::after{
+content:'';
+position:absolute;
+bottom:-5px;
+left:0;
+width:100%;
+height:3px;
+background:#ff7e00;
+border-radius:10px;
+}
+
+/* INPUT */
+.input-box{
+margin-bottom:20px;
+}
+
+.input-box input{
+width:100%;
+padding:12px 20px;
+border-radius:30px;
+border:1px solid #ddd;
+outline:none;
+}
+
+/* BUTTON */
+.btn{
+margin-top:20px;
+padding:12px;
+border:none;
+border-radius:30px;
+background:#ff3d00;
+color:#fff;
+cursor:pointer;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+background:#ff1e00;
+}
+
+/* CHECK */
+.check{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:12px;
+margin-top:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.container{
+flex-direction:column;
+height:auto;
+}
+.left,.right{
+width:100%;
+}
+}
+
+</style>
 </head>
-<body class="bg-gradient-to-br from-[#0f172a] via-[#164e63] to-[#0f172a] text-white min-h-screen">
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-black/70 backdrop-blur-lg z-50 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Mr. Amir Ali</h1>
-            <div class="flex gap-8 text-lg">
-                <a href="#contact" class="hover:text-cyan-400 transition">যোগাযোগ</a>
-                <a href="#register" class="hover:text-cyan-400 transition">রেজিস্ট্রেশন</a>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <!-- Hero Section -->
-    <div class="min-h-screen flex items-center justify-center pt-20 relative px-6">
-        <div class="absolute left-10 top-20 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl sphere"></div>
-        <div class="absolute right-10 bottom-20 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl sphere" style="animation-delay: 2s;"></div>
+<div class="container">
 
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="text-center md:text-left">
-                <h2 class="text-7xl font-bold leading-none mb-4">স্বাগতম!</h2>
-                <p class="text-5xl font-semibold text-cyan-300">Mr. Amir Ali</p>
-                <p class="text-xl text-gray-300 mt-6">আমার ব্যক্তিগত ওয়েবসাইট</p>
-            </div>
+<!-- LEFT -->
+<div class="left">
+<h1>SIGN UP</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+</div>
 
-            <!-- Registration Form -->
-            <div id="register" class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10">
-                <form id="registrationForm" class="space-y-6">
-                    <input type="text" id="name" placeholder="আপনার পুরো নাম" required class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-5 focus:outline-none focus:border-cyan-400">
-                    <input type="tel" id="mobile" placeholder="মোবাইল নম্বর" required class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-5 focus:outline-none focus:border-cyan-400">
-                    <input type="email" id="email" placeholder="ইমেইল অ্যাড্রেস" required class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-5 focus:outline-none focus:border-cyan-400">
-                    
-                    <button type="submit" class="w-full py-6 bg-cyan-400 hover:bg-cyan-500 text-black font-bold rounded-3xl text-xl">রেজিস্ট্রেশন করুন</button>
-                </form>
-            </div>
-        </div>
-    </div>
+<!-- RIGHT -->
+<div class="right">
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-black/40">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 text-cyan-300">যোগাযোগের তথ্য</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Mobile -->
-                <div class="card-hover bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-center">
-                    <i class="fas fa-phone text-5xl text-cyan-400 mb-4"></i>
-                    <p class="font-medium">মোবাইল</p>
-                    <a href="tel:+8801840364137" class="block mt-2 text-cyan-300 text-xl">+8801840364137</a>
-                </div>
-                <!-- WhatsApp -->
-                <div class="card-hover bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-center">
-                    <i class="fab fa-whatsapp text-5xl text-green-400 mb-4"></i>
-                    <p class="font-medium">হোয়াটসঅ্যাপ</p>
-                    <a href="https://wa.me/8801840364137" target="_blank" class="block mt-2 text-cyan-300 text-xl">+8801840364137</a>
-                </div>
-                <!-- Facebook -->
-                <div class="card-hover bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-center">
-                    <i class="fab fa-facebook text-5xl text-blue-400 mb-4"></i>
-                    <p class="font-medium">ফেসবুক</p>
-                    <a href="https://facebook.com/mdaminall172009" target="_blank" class="block mt-2 text-cyan-300 text-xl">facebook.com/mdaminall172009</a>
-                </div>
-                <!-- Instagram -->
-                <div class="card-hover bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-center">
-                    <i class="fab fa-instagram text-5xl text-pink-400 mb-4"></i>
-                    <p class="font-medium">ইনস্টাগ্রাম</p>
-                    <a href="https://instagram.com/mdaminall172009" target="_blank" class="block mt-2 text-cyan-300 text-xl">@mdaminall172009</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="tabs">
+<span class="active">sign up</span>
+<span>login</span>
+</div>
 
-    <footer class="py-10 text-center text-gray-400">© ২০২৬ Mr. Amir Ali • GitHub Pages</footer>
+<div class="input-box">
+<input type="text" placeholder="name">
+</div>
 
-    <script>
-        // ================== EmailJS সেটআপ (এখানে তোমার কী বসাও) ==================
-        (function() {
-            emailjs.init("YOUR_PUBLIC_KEY_HERE");   // ← এখানে তোমার EmailJS Public Key বসাও
-        })();
+<div class="input-box">
+<input type="text" placeholder="login">
+</div>
 
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+<div class="input-box">
+<input type="email" placeholder="e-mail">
+</div>
 
-            const formData = {
-                name: document.getElementById('name').value,
-                mobile: document.getElementById('mobile').value,
-                email: document.getElementById('email').value,
-                date: new Date().toLocaleString('bn-BD')
-            };
+<div class="input-box">
+<input type="password" placeholder="password">
+</div>
 
-            // তোমার ইমেইলে নোটিফিকেশন
-            emailjs.send("YOUR_SERVICE_ID", "registration-notification", formData);
-            
-            // ইউজারকে কনফার্মেশন মেইল
-            emailjs.send("YOUR_SERVICE_ID", "registration-confirmation", formData)
-                .then(() => {
-                    alert("🎉 রেজিস্ট্রেশন সফল হয়েছে!\nকনফার্মেশন ইমেইল পাঠানো হয়েছে।");
-                    document.getElementById('registrationForm').reset();
-                });
-        });
-    </script>
+<div class="check">
+<input type="checkbox"> I have accepted the terms and conditions
+</div>
+
+<button class="btn">sign up →</button>
+
+</div>
+
+</div>
+
 </body>
 </html>

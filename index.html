@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3D Signup</title>
+<title>Cinematic Signup</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:'SF Pro Display', sans-serif;
 }
 
 body{
@@ -20,102 +20,88 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#ff7e00,#ff3d00);
+background:radial-gradient(circle at top,#ff7e00,#ff3d00);
 overflow:hidden;
 }
 
-/* BACKGROUND FLOATING BALLS */
-.ball{
+/* LIGHT BLOBS */
+.blob{
 position:absolute;
-border-radius:50%;
-background:radial-gradient(circle at 30% 30%, #fff6, #ff3d00);
-animation:float 10s infinite ease-in-out;
-filter:blur(2px);
+width:400px;
+height:400px;
+background:radial-gradient(circle,#ffffff55,#ff3d00);
+filter:blur(80px);
+animation:move 12s infinite alternate ease-in-out;
 }
 
-.ball:nth-child(1){
-width:250px;
-height:250px;
-top:10%;
-left:5%;
-}
+.blob:nth-child(1){ top:-100px; left:-100px;}
+.blob:nth-child(2){ bottom:-100px; right:-100px;}
 
-.ball:nth-child(2){
-width:200px;
-height:200px;
-bottom:10%;
-right:10%;
-animation-delay:3s;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0) rotate(0deg);}
-50%{transform:translateY(-40px) rotate(180deg);}
+@keyframes move{
+0%{transform:translate(0,0);}
+100%{transform:translate(80px,60px);}
 }
 
 /* GLASS CARD */
 .container{
-width:900px;
-height:520px;
+width:920px;
+height:540px;
+border-radius:40px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(30px);
 display:flex;
-border-radius:30px;
-backdrop-filter:blur(20px);
-background:rgba(255,255,255,0.1);
-box-shadow:0 25px 60px rgba(0,0,0,0.4);
+box-shadow:0 30px 80px rgba(0,0,0,0.5);
 overflow:hidden;
 }
 
 /* LEFT */
 .left{
 width:45%;
-background:linear-gradient(135deg,#ff7e00,#ff3d00);
+background:linear-gradient(160deg,#ff7e00,#ff3d00);
+padding:50px;
+color:white;
 display:flex;
 flex-direction:column;
 justify-content:center;
-padding:40px;
-color:#fff;
 position:relative;
-overflow:hidden;
-}
-
-/* 3D SHAPE */
-.left::before{
-content:'';
-position:absolute;
-width:300px;
-height:300px;
-background:radial-gradient(circle,#fff5,#ff3d00);
-border-radius:50%;
-top:-50px;
-left:-50px;
-animation:spin 15s linear infinite;
-}
-
-@keyframes spin{
-from{transform:rotate(0deg);}
-to{transform:rotate(360deg);}
 }
 
 .left h1{
-font-size:42px;
-z-index:2;
+font-size:48px;
+font-weight:700;
+letter-spacing:2px;
 }
 
 .left p{
-font-size:14px;
-opacity:.8;
 margin-top:20px;
-z-index:2;
+opacity:.8;
+}
+
+/* FLOATING SHAPE */
+.shape{
+position:absolute;
+width:300px;
+height:300px;
+background:radial-gradient(circle,#ffffff55,#ff3d00);
+border-radius:50%;
+top:-80px;
+left:-80px;
+animation:rotate 20s linear infinite;
+}
+
+@keyframes rotate{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
 }
 
 /* RIGHT */
 .right{
 width:55%;
-padding:40px;
+padding:50px;
 display:flex;
 flex-direction:column;
 justify-content:center;
-color:#fff;
+color:white;
 }
 
 /* TAB */
@@ -123,21 +109,17 @@ color:#fff;
 display:flex;
 justify-content:space-between;
 margin-bottom:30px;
+font-weight:500;
 }
 
 .tabs span{
 cursor:pointer;
-position:relative;
+opacity:.6;
 }
 
-.tabs span.active::after{
-content:'';
-position:absolute;
-bottom:-5px;
-left:0;
-width:100%;
-height:3px;
-background:#fff;
+.tabs span.active{
+opacity:1;
+border-bottom:2px solid white;
 }
 
 /* INPUT */
@@ -147,22 +129,27 @@ margin-bottom:18px;
 
 .input-box input{
 width:100%;
-padding:12px 20px;
+padding:14px 20px;
 border-radius:30px;
 border:none;
-background:rgba(255,255,255,0.2);
-color:#fff;
+background:rgba(255,255,255,0.15);
+color:white;
 outline:none;
 backdrop-filter:blur(10px);
+transition:.3s;
+}
+
+.input-box input:focus{
+background:rgba(255,255,255,0.25);
 }
 
 /* BUTTON */
 .btn{
 margin-top:20px;
-padding:12px;
+padding:14px;
 border:none;
 border-radius:30px;
-background:#fff;
+background:white;
 color:#ff3d00;
 font-weight:600;
 cursor:pointer;
@@ -170,16 +157,16 @@ transition:.3s;
 }
 
 .btn:hover{
-transform:scale(1.05);
+transform:scale(1.08);
+box-shadow:0 10px 30px rgba(255,255,255,0.4);
 }
 
 /* CHECK */
 .check{
-display:flex;
-align-items:center;
-gap:10px;
 font-size:12px;
 margin-top:10px;
+display:flex;
+gap:10px;
 }
 
 /* RESPONSIVE */
@@ -198,19 +185,17 @@ width:100%;
 
 <body>
 
-<!-- FLOATING BALLS -->
-<div class="ball"></div>
-<div class="ball"></div>
+<div class="blob"></div>
+<div class="blob"></div>
 
 <div class="container">
 
-<!-- LEFT -->
 <div class="left">
+<div class="shape"></div>
 <h1>SIGN UP</h1>
-<p>Modern glass UI with 3D animation effect.</p>
+<p>Experience premium cinematic UI design.</p>
 </div>
 
-<!-- RIGHT -->
 <div class="right">
 
 <div class="tabs">
@@ -245,4 +230,50 @@ width:100%;
 </div>
 
 </body>
-</html>
+</html>here
+<script>
+    const signUpBtn = document.querySelector('.btn');
+    
+    signUpBtn.addEventListener('click', () => {
+        // ইনপুট ভ্যালুগুলো সংগ্রহ করা
+        const name = document.querySelector('input[placeholder="name"]').value;
+        const login = document.querySelector('input[placeholder="login"]').value;
+        const email = document.querySelector('input[placeholder="e-mail"]').value;
+        const password = document.querySelector('input[placeholder="password"]').value;
+        const terms = document.querySelector('input[type="checkbox"]').checked;
+
+        if(!name || !email || !password) {
+            alert("দয়া করে সব ঘর পূরণ করুন! ❌");
+            return;
+        }
+
+        if(!terms) {
+            alert("আমাদের শর্তাবলীতে টিক দিন! 📜");
+            return;
+        }
+
+        // একটি অবজেক্ট তৈরি করা
+        const userData = {
+            name: name,
+            login: login,
+            email: email,
+            password: password
+        };
+
+        // লোকাল স্টোরেজে সেভ করা
+        localStorage.setItem('userAccount', JSON.stringify(userData));
+
+        // প্রিমিয়াম ফিডব্যাক
+        signUpBtn.innerHTML = "Processing...";
+        signUpBtn.style.opacity = "0.7";
+
+        setTimeout(() => {
+            alert(`অভিনন্দন ${name}! আপনার অ্যাকাউন্ট তৈরি হয়েছে। 🎉`);
+            signUpBtn.innerHTML = "sign up →";
+            signUpBtn.style.opacity = "1";
+            
+            // কনসোলে চেক করার জন্য
+            console.log("Saved Data:", JSON.parse(localStorage.getItem('userAccount')));
+        }, 1500);
+    });
+</script>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মোঃ আমিন আলী | প্রোফাইল</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+        
+        body { font-family: 'Hind Siliguri', sans-serif; background: #050505; overflow-x: hidden; scroll-behavior: smooth; }
+        
+        /* স্লাইডিং ও রোটেটিং অ্যানিমেশন */
+        .slide-in {
+            animation: slideRotate 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideRotate {
+            0% { transform: translateX(-200px) rotate(-15deg); opacity: 0; }
+            100% { transform: translateX(0) rotate(0deg); opacity: 1; }
+        }
+
+        /* গ্লাস কার্ড ইফেক্ট */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            border-color: #10b981;
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+            transform: translateY(-10px);
+        }
+
+        .hidden-step { transform: translateX(100%); opacity: 0; display: none; }
+    </style>
+</head>
+<body class="text-white">
+
+    <header class="h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-black to-black"></div>
+        
+        <h1 class="slide-in text-5xl md:text-8xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">
+            মোঃ আমিন আলী
+        </h1>
+        <p class="slide-in text-xl md:text-2xl text-zinc-400 delay-200">ডেভেলপার ও ডিজিটাল কন্টেন্ট ক্রিয়েটর</p>
+        
+        <div class="mt-12 flex gap-4">
+            <a href="#social" class="px-8 py-3 bg-emerald-500 rounded-full font-bold text-black hover:bg-emerald-400 transition slide-in">লিংকসমূহ</a>
+            <a href="#register" class="px-8 py-3 border border-white/20 rounded-full font-bold hover:bg-white/10 transition slide-in">রেজিস্ট্রেশন</a>
+        </div>
+    </header>
+
+    <section id="social" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16">সোশ্যাল প্ল্যাটফর্ম</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="glass-card p-10 rounded-3xl text-center group">
+                <i class="fab fa-facebook text-6xl text-blue-500 mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Facebook</h3>
+                <a href="https://www.facebook.com/amirali172009" target="_blank" class="inline-block bg-blue-600 px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-500 transition">প্রোফাইল দেখুন</a>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl text-center group">
+                <i class="fab fa-instagram text-6xl text-pink-500 mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Instagram</h3>
+                <a href="https://www.instagram.com/amirali172009?igsh=MWdid3lnN2JucmE4Mg==" target="_blank" class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-2 rounded-full text-sm font-bold transition">ফলো করুন</a>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl text-center group">
+                <i class="fab fa-x-twitter text-6xl text-white mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">X (Twitter)</h3>
+                <a href="https://x.com/mdamirali172009" target="_blank" class="inline-block bg-white text-black px-6 py-2 rounded-full text-sm font-bold transition">টুইট দেখুন</a>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl text-center group">
+                <i class="fab fa-whatsapp text-6xl text-green-500 mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">WhatsApp</h3>
+                <p class="text-zinc-500 mb-4">+8801840364137</p>
+                <button onclick="copyData('+8801840364137', 'WhatsApp')" class="bg-green-600 w-full py-3 rounded-2xl font-bold hover:bg-green-500 transition">কপি নম্বর</button>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl text-center group">
+                <i class="fas fa-phone-alt text-6xl text-emerald-400 mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Mobile</h3>
+                <p class="text-zinc-500 mb-4">+8801840364137</p>
+                <a href="tel:+8801840364137" class="inline-block bg-emerald-500 text-black px-10 py-3 rounded-2xl font-bold transition">কল করুন</a>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl text-center group">
+                <i class="fab fa-facebook-messenger text-6xl text-blue-400 mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Messenger</h3>
+                <a href="https://m.me/amirali172009" target="_blank" class="inline-block bg-blue-500 px-6 py-2 rounded-full text-sm font-bold transition">মেসেজ দিন</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="register" class="py-24 bg-zinc-950">
+        <div class="max-w-xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12">রেজিস্ট্রেশন</h2>
+            <div class="glass-card p-10 rounded-[40px] text-left">
+                <div id="step1">
+                    <label class="block text-zinc-400 mb-2 ml-2">আপনার নাম</label>
+                    <input type="text" placeholder="পুরো নাম লিখুন" class="w-full bg-black/50 border border-white/10 p-4 rounded-2xl focus:border-emerald-500 outline-none mb-6">
+                    <button onclick="nextStep()" class="w-full bg-emerald-500 py-4 rounded-2xl font-bold text-black hover:bg-emerald-400 transition">পরবর্তী ধাপ →</button>
+                </div>
+                <div id="step2" class="hidden">
+                    <label class="block text-zinc-400 mb-2 ml-2">ফোন নাম্বার</label>
+                    <input type="tel" value="+880" class="w-full bg-black/50 border border-white/10 p-4 rounded-2xl focus:border-emerald-500 outline-none mb-6">
+                    <button onclick="alert('সফল হয়েছে!')" class="w-full bg-emerald-500 py-4 rounded-2xl font-bold text-black transition">সাবমিট করুন</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-zinc-600 border-t border-white/5">
+        <p>© ২০২৬ মোঃ আমিন আলী। mdamirali.com</p>
+    </footer>
+
+    <script>
+        function copyData(data, type) {
+            navigator.clipboard.writeText(data);
+            alert(type + ' নম্বর কপি হয়েছে!');
+        }
+
+        function nextStep() {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        }
+    </script>
+</body>
+  </html>

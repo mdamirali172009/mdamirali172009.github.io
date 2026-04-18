@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #080a0c;
+    color: #ffffff;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 6%;
+    background: rgba(10, 15, 20, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #e50914;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #fff;
+}
+
+.search-box {
+    display: flex;
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 5px 15px;
+    border: 1px solid #333;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 5px;
+    width: 200px;
+}
+
+.search-box button {
+    background: transparent;
+    border: none;
+    color: #e50914;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.1)), 
+                url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    max-width: 600px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #ccc;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.btn-play {
+    padding: 12px 30px;
+    background: #e50914;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.btn-list {
+    padding: 12px 30px;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0;
+}
+
+.filter-btn {
+    padding: 6px 20px;
+    background: transparent;
+    border: 1px solid #444;
+    color: #aaa;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Movie Grid */
+.movie-section {
+    padding: 0 6%;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.movie-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #141414;
+    transition: 0.4s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e50914;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.movie-info {
+    padding: 12px;
+}
+
+.movie-info h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.rating {
+    color: #ffb400;
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    margin-top: 80px;
+    padding: 50px 6%;
+    background: #000;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.footer-links {
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #777;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+.socials i {
+    font-size: 20px;
+    margin: 0 10px;
+    color: #ccc;
+    cursor: pointer;
+  }

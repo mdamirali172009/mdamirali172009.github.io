@@ -1,238 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbitron', sans-serif; }
 
 body {
-    background-color: #080a0c;
-    color: #ffffff;
+    background: radial-gradient(circle, #1a1a2e, #16213e, #0f3460);
+    color: white;
+    min-height: 100vh;
 }
 
-/* Navbar Styling */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 6%;
-    background: rgba(10, 15, 20, 0.95);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+    display: flex; justify-content: space-between; padding: 20px 5%;
+    background: rgba(0,0,0,0.5); backdrop-filter: blur(10px);
+    border-bottom: 2px solid #00d2ff;
 }
 
-.logo {
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 2px;
+.logo span { color: #00d2ff; text-shadow: 0 0 10px #00d2ff; }
+
+/* ৩ডি আপলোড বক্স (Glassmorphism) */
+.upload-section { display: flex; justify-content: center; padding: 50px 0; }
+.glass-upload-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px; border-radius: 20px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+    text-align: center; width: 500px;
 }
 
-.logo span {
-    color: #e50914;
+.btn-3d {
+    background: #00d2ff; border: none; padding: 15px 30px;
+    color: black; font-weight: bold; border-radius: 50px;
+    cursor: pointer; box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+    transition: 0.3s; margin-top: 20px;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+.btn-3d:hover { transform: scale(1.1); box-shadow: 0 0 25px #00d2ff; }
+
+/* ৩ডি মুভি কার্ড ইফেক্ট */
+.movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 40px; padding: 50px 5%; }
+
+.movie-card-3d {
+    perspective: 1000px; /* ৩ডি ভিউ এর জন্য */
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #ccc;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: #fff;
-}
-
-.search-box {
-    display: flex;
-    background: #1a1a1a;
-    border-radius: 20px;
-    padding: 5px 15px;
+.inner-card {
+    background: #1c252e; border-radius: 15px; overflow: hidden;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     border: 1px solid #333;
 }
 
-.search-box input {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 5px;
-    width: 200px;
+.movie-card-3d:hover .inner-card {
+    transform: rotateY(15px) rotateX(10deg);
+    border-color: #00d2ff;
 }
 
-.search-box button {
-    background: transparent;
-    border: none;
-    color: #e50914;
-    cursor: pointer;
-}
+.inner-card img { width: 100%; height: 350px; object-fit: cover; }
+.info { padding: 20px; text-align: center; }
+.info button { background: transparent; border: 1px solid #00d2ff; color: #00d2ff; padding: 5px 15px; cursor: pointer; border-radius: 5px; }
 
-/* Hero Section */
-.hero {
-    height: 80vh;
-    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.1)), 
-                url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    padding: 0 6%;
-}
-
-.hero-content h1 {
-    font-size: 60px;
-    max-width: 600px;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 18px;
-    color: #ccc;
-    max-width: 500px;
-    margin-bottom: 30px;
-}
-
-.btn-play {
-    padding: 12px 30px;
-    background: #e50914;
-    border: none;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 15px;
-}
-
-.btn-list {
-    padding: 12px 30px;
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Filters */
-.filters {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 40px 0;
-}
-
-.filter-btn {
-    padding: 6px 20px;
-    background: transparent;
-    border: 1px solid #444;
-    color: #aaa;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.filter-btn:hover, .filter-btn.active {
-    background: #fff;
-    color: #000;
-    border-color: #fff;
-}
-
-/* Movie Grid */
-.movie-section {
-    padding: 0 6%;
-}
-
-.section-title {
-    font-size: 22px;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.movie-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 25px;
-}
-
-.movie-card {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #141414;
-    transition: 0.4s ease;
-}
-
-.movie-card:hover {
-    transform: scale(1.05);
-    z-index: 2;
-}
-
-.movie-card img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-}
-
-.badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #e50914;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 2px 8px;
-    border-radius: 3px;
-}
-
-.movie-info {
-    padding: 12px;
-}
-
-.movie-info h3 {
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-
-.rating {
-    color: #ffb400;
-    font-size: 14px;
-}
-
-/* Footer */
-footer {
-    margin-top: 80px;
-    padding: 50px 6%;
-    background: #000;
-    text-align: center;
-    border-top: 1px solid #222;
-}
-
-.footer-links {
-    margin: 20px 0;
-}
-
-.footer-links a {
-    color: #777;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 14px;
-}
-
-.socials i {
-    font-size: 20px;
-    margin: 0 10px;
-    color: #ccc;
-    cursor: pointer;
-  }
+/* ভিডিও প্লেয়ার */
+.video-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 999; justify-content: center; align-items: center; }
+.video-container { width: 80%; position: relative; }
+.close-btn { position: absolute; top: -50px; right: 0; color: white; font-size: 40px; cursor: pointer; }
+video { width: 100%; border: 2px solid #00d2ff; box-shadow: 0 0 20px #00d2ff; }
